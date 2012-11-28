@@ -1,0 +1,11 @@
+{
+    "name": "weinre-heroku",
+    "version": "2.0.0-pre-H9PU2WST-incubating",
+    "dependencies": {
+        "weinre": "2.x"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.1.x"
+    }
+}
