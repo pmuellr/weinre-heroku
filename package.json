@@ -1,8 +1,8 @@
 {
     "name": "weinre-heroku",
-    "version": "2.0.0-pre-H9PU2WST-incubating",
+    "version": "2.0.0-pre-HA5N9T49",
     "dependencies": {
-        "weinre": "http://dl.dropbox.com/u/2192156/tmp/apache-cordova-weinre-2.0.0-pre-HA5N9T49-bin.tar.gz"
+        "weinre": "2.x"
     },
     "engines": {
         "node": "0.8.x",
