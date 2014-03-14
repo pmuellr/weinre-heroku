@@ -21,12 +21,6 @@ Receiving objects: 100% (11/11), done.
                                              &nbsp;
 <b>$ cd weinre-heroku</b>
                                              &nbsp;
-<b>$ heroku login</b>
-Enter your Heroku credentials.
-Email: xxx@yyy.zzz
-Password (typing will be hidden):
-Authentication successful.
-                                             &nbsp;
 <b>$ heroku create</b>
 Creating aaa-bbb-666... done, stack is cedar
 http://aaa-bbb-666.herokuapp.com/ | git@heroku.com:aaa-bbb-666.git
@@ -74,3 +68,71 @@ At this point, a browser has opened to your instance of weinre on the big ol'
 internets.
 
 Enjoy!
+
+
+running on Cloud Foundry
+============================================
+
+It's even easier to run weinre on Cloud Foundry than it is on Heroku!
+
+Assumes you have an account on a Cloud Foundry-based PaaS, and have the 
+[`cf` tool](https://github.com/cloudfoundry/cli/releases) installed.
+
+If you're not currently using Cloud Foundry, you can try out
+[IBM's BlueMix](https://ace.ng.bluemix.net/) for free.
+
+Here are the basic instructions:
+
+* note that you should substitute your own desired hostname in the `-n` option of 
+  the `cf push weinre` invocation below.
+
+<pre>
+<b>$ git clone git://github.com/pmuellr/weinre-heroku.git</b>
+Cloning into 'weinre-heroku'...
+remote: Counting objects: 11, done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 11 (delta 0), reused 11 (delta 0)
+Receiving objects: 100% (11/11), done.
+                                             &nbsp;
+<b>$ cd weinre-heroku</b>
+                                             &nbsp;
+<b>$ cf push weinre -n some-name-here</b>
+                                             &nbsp;
+Creating app weinre in org [your-id-here] / space dev as [your-id-here]...
+OK
+                                             &nbsp;
+Creating route some-name-here.ng.bluemix.net...
+OK
+                                             &nbsp;
+Binding some-name-here.ng.bluemix.net to weinre...
+OK
+                                             &nbsp;
+Uploading weinre...
+Uploading from: ~/Projects/bluemix/weinre-heroku
+27.2K, 26 files
+OK
+                                             &nbsp;
+Starting app weinre in org [your-id-here] / space dev as [your-id-here]...
+OK
+    [staging messages elided]
+1 of 1 instances running
+                                             &nbsp;
+App started
+                                             &nbsp;
+Showing health and status for app weinre in org [your-id-here] / space dev as [your-id-here]...
+OK
+                                             &nbsp;
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: some-name-here.ng.bluemix.net
+                                             &nbsp;
+     state     since                    cpu    memory        disk          
+#0   running   2014-03-14 05:44:56 PM   0.0%   30.7M of 1G   42.7M of 1G 
+</pre>
+
+At this point, you can open your browser on your new site at `http://some-name-here.ng.bluemix.net`
+running on the big ol' internets.
+
+Enjoy!
+
